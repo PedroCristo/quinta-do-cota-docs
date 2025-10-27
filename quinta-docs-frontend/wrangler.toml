@@ -1,0 +1,6 @@
+name = "quinta-docs-frontend"
+main = "src/index.js"
+compatibility_date = "2025-10-27"
+
+[assets]
+directory = "public"

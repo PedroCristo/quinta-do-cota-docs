@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quinta do Cota — Casos de Teste: Navegação Completa</title>
+  <style>
+    body {
+      margin: 0;
+      background: #0f1115;
+      color: #e6eefc;
+      overflow-x: auto;
+      font-family: Inter, system-ui, Segoe UI, Roboto, Arial, sans-serif;
+    }
+    .svg-container {
+      width: 2000px;
+      height: auto;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="svg-container">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2000 1400"
+      style="width:2000px;height:auto;">
+      <rect width="2000" height="1400" fill="#0f1115" />
+      <text x="30" y="40" fill="#e57373" font-size="26" font-weight="700">
+        Quinta do Cota — Casos de Teste: Navegação Completa (PT)
+      </text>
+      <text x="30" y="70" fill="#a9b1ba" font-size="15">
+        Ambiente: Desktop &amp; Mobile · Idiomas: PT/EN · Fluxos: Website + Loja + Checkout
+      </text>
+
+      <!-- Cabeçalho -->
+      <g transform="translate(30,100)">
+        <rect x="0" y="0" width="1900" height="48" fill="#1b2130" stroke="#2b3448" />
+        <g fill="#e6eefc" font-size="13" font-weight="700">
+          <text x="12" y="30">ID</text>
+          <text x="110" y="30">CENÁRIO</text>
+          <text x="740" y="30">PRÉ-CONDIÇÃO</text>
+          <text x="1080" y="30">PASSOS</text>
+          <text x="1500" y="30">RESULTADO ESPERADO</text>
+          <text x="1870" y="30" text-anchor="end">STATUS</text>
+        </g>
+
+        <!-- Template row style -->
+        <defs>
+          <style type="text/css">
+            .odd { fill:#141924; stroke:#212a3b; }
+            .even { fill:#101522; stroke:#212a3b; }
+            .id { fill:#dfe6ef; font-size:13px; }
+            .text { fill:#dfe6ef; font-size:13px; }
+            .light { fill:#b8c1cc; font-size:13px; }
+            .ok { fill:#8fe3a1; font-size:13px; }
+          </style>
+        </defs>
+
+        <!-- NAVBAR -->
+        <g transform="translate(0,50)">
+          <rect class="odd" width="1900" height="44"/>
+          <text x="12" y="27" class="id">NAV_001</text>
+          <text x="110" y="27" class="text">Logo redireciona para Início</text>
+          <text x="740" y="27" class="light">Navbar carregada</text>
+          <text x="1080" y="27" class="text">Clicar no logótipo</text>
+          <text x="1500" y="27" class="ok">Página principal aberta</text>
+          <text x="1870" y="27" class="ok" text-anchor="end">PASS</text>
+        </g>
+
+        <g transform="translate(0,94)">
+          <rect class="even" width="1900" height="44"/>
+          <text x="12" y="27" class="id">NAV_002</text>
+          <text x="110" y="27" class="text">Links principais (Início, Sobre Nós, Região, Enoturismo, Mais, Loja)</text>
+          <text x="740" y="27" class="light">Navbar ativa</text>
+          <text x="1080" y="27" class="text">Clicar em cada link</text>
+          <text x="1500" y="27" class="ok">Abre página correta</text>
+          <text x="1870" y="27" class="ok" text-anchor="end">PASS</text>
+        </g>
+
+        <g transform="translate(0,138)">
+          <rect class="odd" width="1900" height="44"/>
+          <text x="12" y="27" class="id">NAV_003</text>
+          <text x="110" y="27" class="text">Dropdown “Mais” mostra Alojamento Local / Loja</text>
+          <text x="740" y="27" class="light">Hover ativo</text>
+          <text x="1080" y="27" class="text">Passar o rato e clicar</text>
+          <text x="1500" y="27" class="ok">Links funcionam</text>
+          <text x="1870" y="27" class="ok" text-anchor="end">PASS</text>
+        </g>
+
+        <!-- HOME -->
+        <g transform="translate(0,182)">
+          <rect class="even" width="1900" height="44"/>
+          <text x="12" y="27" class="id">HOME_001</text>
+          <text x="110" y="27" class="text">Botão “Saber Mais” (hero) leva à secção Sobre Nós</text>
+          <text x="740" y="27" class="light">Página inicial carregada</text>
+          <text x="1080" y="27" class="text">Clicar “Saber Mais”</text>
+          <text x="1500" y="27" class="ok">Scroll até secção Sobre Nós</text>
+          <text x="1870" y="27" class="ok" text-anchor="end">PASS</text>
+        </g>
+
+        <g transform="translate(0,226)">
+          <rect class="odd" width="1900" height="44"/>
+          <text x="12" y="27" class="id">HOME_002</text>
+          <text x="110" y="27" class="text">Botão “Saber Mais” na secção abre página Sobre Nós</text>
+          <text x="740" y="27" class="light">Secção visível</text>
+          <text x="1080" y="27" class="text">Clicar no botão</text>
+          <text x="1500" y="27" class="ok">Abre /sobre-nos</text>
+          <text x="1870" y="27" class="ok" text-anchor="end">PASS</text>
+        </g>
+
+        <g transform="translate(0,270)">
+          <rect class="even" width="1900" height="44"/>
+          <text x="12" y="27" class="id">HOME_003</text>
+          <text x="110" y="27" class="text">Newsletter: preencher email e validar reCAPTCHA</text>
+          <text x="740" y="27" class="light">Formulário visível</text>
+          <text x="1080" y="27" class="text">Clicar “Subscrever”</text>
+          <text x="1500" y="27" class="ok">Email registado com sucesso</text>
+          <text x="1870" y="27" class="ok" text-anchor="end">PASS</text>
+        </g>
+
+        <!-- SOBRE NÓS -->
+        <g transform="translate(0,314)">
+          <rect class="odd" width="1900" height="44"/>
+          <text x="12" y="27" class="id">ABOUT_001</text>
+          <text x="110" y="27" class="text">Botão “Mais sobre nossas castas” leva à página Castas</text>
+          <text x="740" y="27" class="light">Página /sobre-nos</text>
+          <text x="1080" y="27" class="text">Clicar “Castas”</text>
+          <text x="1500" y="27" class="ok">Abre página /castas</text>
+          <text x="1870" y="27" class="ok" text-anchor="end">PASS</text>
+        </g>
+
+        <!-- VINHOS -->
+        <g transform="translate(0,358)">
+          <rect class="even" width="1900" height="44"/>
+          <text x="12" y="27" class="id">WINE_001</text>
+          <text x="110" y="27" class="text">Botão “Saber Mais” abre card do vinho</text>
+          <text x="740" y="27" class="light">Lista de vinhos</text>
+          <text x="1080" y="27" class="text">Clicar “Saber Mais”</text>
+          <text x="1500" y="27" class="ok">Ficha do vinho aberta</text>
+          <text x="1870" y="27" class="ok" text-anchor="end">PASS</text>
+        </g>
+
+        <g transform="translate(0,402)">
+          <rect class="odd" width="1900" height="44"/>
+          <text x="12" y="27" class="id">WINE_002</text>
+          <text x="110" y="27" class="text">Botão “Ver PDF” abre ficha técnica</text>
+          <text x="740" y="27" class="light">Página do vinho</text>
+          <text x="1080" y="27" class="text">Clicar “Ver PDF”</text>
+          <text x="1500" y="27" class="ok">PDF aberto em nova aba</text>
+          <text x="1870" y="27" class="ok" text-anchor="end">PASS</text>
+        </g>
+
+        <g transform="translate(0,446)">
+          <rect class="even" width="1900" height="44"/>
+          <text x="12" y="27" class="id">WINE_003</text>
+          <text x="110" y="27" class="text">Botão “Ver na Loja” abre o produto na loja</text>
+          <text x="740" y="27" class="light">Página do vinho</text>
+          <text x="1080" y="27" class="text">Clicar “Ver na Loja”</text>
+          <text x="1500" y="27" class="ok">Produto aberto na loja</text>
+          <text x="1870" y="27" class="ok" text-anchor="end">PASS</text>
+        </g>
+
+        <!-- ENOTURISMO -->
+        <g transform="translate(0,490)">
+          <rect class="odd" width="1900" height="44"/>
+          <text x="12" y="27" class="id">ENO_001</text>
+          <text x="110" y="27" class="text">Botão “Casa” abre detalhes da casa</text>
+          <text x="740" y="27" class="light">Página /enoturismo</text>
+          <text x="1080" y="27" class="text">Clicar “Casa”</text>
+          <text x="1500" y="27" class="ok">Detalhes da casa exibidos</text>
+          <text x="1870" y="27" class="ok" text-anchor="end">PASS</text>
+        </g>
+
+        <g transform="translate(0,534)">
+          <rect class="even" width="1900" height="44"/>
+          <text x="12" y="27" class="id">ENO_002</text>
+          <text x="110" y="27" class="text">Botão “Airbnb” abre em nova aba</text>
+          <text x="740" y="27" class="light">Casa aberta</text>
+          <text x="1080" y="27" class="text">Clicar “Airbnb”</text>
+          <text x="1500" y="27" class="ok">Página Airbnb aberta</text>
+          <text x="1870" y="27" class="ok" text-anchor="end">PASS</text>
+        </g>
+
+        <!-- LOJA / CHECKOUT -->
+        <g transform="translate(0,578)">
+          <rect class="odd" width="1900" height="44"/>
+          <text x="12" y="27" class="id">SHOP_001</text>
+          <text x="110" y="27" class="text">Botão “Iniciar Sessão” abre login</text>
+          <text x="740" y="27" class="light">Navbar loja</text>
+          <text x="1080" y="27" class="text">Clicar botão</text>
+          <text x="1500" y="27" class="ok">Página de login aberta</text>
+          <text x="1870" y="27" class="ok" text-anchor="end">PASS</text>
+        </g>
+
+        <g transform="translate(0,622)">
+          <rect class="even" width="1900" height="44"/>
+          <text x="12" y="27" class="id">SHOP_002</text>
+          <text x="110" y="27" class="text">“Comprar Agora” adiciona ao carrinho</text>
+          <text x="740" y="27" class="light">Produto aberto</text>
+          <text x="1080" y="27" class="text">Clicar “Comprar Agora”</text>
+          <text x="1500" y="27" class="ok">Carrinho atualizado</text>
+          <text x="1870" y="27" class="ok" text-anchor="end">PASS</text>
+        </g>
+
+        <g transform="translate(0,666)">
+          <rect class="odd" width="1900" height="44"/>
+          <text x="12" y="27" class="id">CART_001</text>
+          <text x="110" y="27" class="text">Botão “Continuar a Comprar” volta à loja</text>
+          <text x="740" y="27" class="light">Carrinho aberto</text>
+          <text x="1080" y="27" class="text">Clicar botão</text>
+          <text x="1500" y="27" class="ok">Página da loja aberta</text>
+          <text x="1870" y="27" class="ok" text-anchor="end">PASS</text>
+        </g>
+
+        <g transform="translate(0,710)">
+          <rect class="even" width="1900" height="44"/>
+          <text x="12" y="27" class="id">CART_002</text>
+          <text x="110" y="27" class="text">Botão “Finalizar Compra” abre checkout</text>
+          <text x="740" y="27" class="light">Carrinho com itens</text>
+          <text x="1080" y="27" class="text">Clicar “Finalizar”</text>
+          <text x="1500" y="27" class="ok">Checkout aberto</text>
+          <text x="1870" y="27" class="ok" text-anchor="end">PASS</text>
+        </g>
+
+        <g transform="translate(0,754)">
+          <rect class="odd" width="1900" height="44"/>
+          <text x="12" y="27" class="id">CHK_001</text>
+          <text x="110" y="27" class="text">Pagamento concluído leva à página de agradecimento</text>
+          <text x="740" y="27" class="light">Stripe ativo</text>
+          <text x="1080" y="27" class="text">Efetuar pagamento</text>
+          <text x="1500" y="27" class="ok">Redirecionado para “Obrigado”</text>
+          <text x="1870" y="27" class="ok" text-anchor="end">PASS</text>
+        </g>
+
+        <!-- FOOTER -->
+        <g transform="translate(0,798)">
+          <rect class="even" width="1900" height="44"/>
+          <text x="12" y="27" class="id">FOOT_001</text>
+          <text x="110" y="27" class="text">Ícone Facebook abre página oficial</text>
+          <text x="740" y="27" class="light">Rodapé visível</text>
+          <text x="1080" y="27" class="text">Clicar ícone</text>
+          <text x="1500" y="27" class="ok">Facebook aberto em nova aba</text>
+          <text x="1870" y="27" class="ok" text-anchor="end">PASS</text>
+        </g>
+
+        <g transform="translate(0,842)">
+          <rect class="odd" width="1900" height="44"/>
+          <text x="12" y="27" class="id">FOOT_002</text>
+          <text x="110" y="27" class="text">Política, Termos e Cookies abrem corretamente</text>
+          <text x="740" y="27" class="light">Rodapé</text>
+          <text x="1080" y="27" class="text">Clicar links</text>
+          <text x="1500" y="27" class="ok">Páginas legais abertas</text>
+          <text x="1870" y="27" class="ok" text-anchor="end">PASS</text>
+        </g>
+      </g>
+
+      <!-- Legenda -->
+      <g transform="translate(30,1360)" font-size="13">
+        <rect x="0" y="-14" width="14" height="14" fill="#8fe3a1" stroke="#2b3448"/>
+        <text x="22" y="-2" fill="#c9d3df">PASS</text>
+        <rect x="90" y="-14" width="14" height="14" fill="#ffa3a3" stroke="#2b3448"/>
+        <text x="112" y="-2" fill="#c9d3df">FAIL</text>
+        <rect x="160" y="-14" width="14" height="14" fill="#f7d774" stroke="#2b3448"/>
+        <text x="182" y="-2" fill="#c9d3df">VALIDAÇÃO / AVISO</text>
+      </g>
+    </svg>
+  </div>
+</body>
+</html>

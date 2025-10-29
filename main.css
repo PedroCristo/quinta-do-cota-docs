@@ -167,11 +167,9 @@ footer {
 
 @media(max-width:600px) {
     ul.diagrama-list {
-     margin-left: -40px !important;
+        margin-left: -40px !important;
     }
 }
-
-
 
 @media(max-width:450px) {
 
@@ -188,9 +186,9 @@ footer {
     }
 
     @media(max-width:600px) {
-    ul.diagrama-list {
-     margin-left: -30px !important;
+        ul.diagrama-list {
+            margin-left: -30px !important;
+        }
     }
-}
 
 }

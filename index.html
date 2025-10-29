@@ -41,8 +41,9 @@
                 <li><a href="#funcionalidades">3. Funcionalidades Principais</a></li>
                 <li><a href="#diagrama-bd">4. Diagrama da Base de Dados</a></li>
                 <li><a href="#stripe">5. Testar Pagamentos Stripe</a></li>
-                <li><a href="#acesso">6. Acesso à Demonstração</a></li>
-                <li><a href="#creditos">7. Créditos e Contactos</a></li>
+                <li><a href="#links-testing">6. Links Manual Teste</a></li>
+                <li><a href="#acesso">7. Acesso à Demonstração</a></li>
+                <li><a href="#creditos">8. Créditos e Contactos</a></li>
             </ul>
         </nav>
 
@@ -260,7 +261,6 @@
                     </tr>
                 </tbody>
             </table>
-
             <p>
                 Após um pagamento bem-sucedido, é enviado um email de confirmação ao cliente.
                 Outro email é enviado ao administrador com uma notificação, e a encomenda é automaticamente registada no
@@ -279,8 +279,43 @@
             </div>
         </section>
 
+        <!-- NOVA SECÇÃO: TESTES DE NAVEGAÇÃO E LINKS -->
+        <section id="links-testing" class="card">
+            <h2>5. Testes de Navegação e Interatividade</h2>
+            <p class="notice">
+                Abaixo encontra-se o diagrama de verificação de todos os links e botões do website — desde o menu
+                principal até ao checkout, incluindo o comportamento multilíngua (PT/EN) e o rodapé.
+            </p>
+
+            <div style="text-align:center; margin:20px 0;">
+                <a href="./linsk_tests.html" target="_blank" rel="noopener">
+                    <img src="./images/quinta_cota_links_tests.png"
+                        alt="Tabela de Casos de Teste de Navegação Quinta do Cota"
+                        style="width:100%; max-width:1000px; height:auto; border-radius:8px; box-shadow:0 4px 12px rgba(0,0,0,0.4);" />
+                </a>
+                <p style="color:#bbb; margin-top:8px; font-size:14px;">
+                    <em>Clique na imagem para ver a tabela completa e interativa dos casos de teste.</em>
+                </p>
+            </div>
+
+            <ul style="list-style-type:none; margin-left:10px; color:#ddd; line-height:1.8;" class="diagrama-list">
+                <li>🔗 - <strong>Navbar &amp; Links</strong>: teste de navegação entre páginas principais (<em>Início,
+                        Sobre Nós, Região, Enoturismo, Loja, Mais</em>).</li>
+                <li>📜 - <strong>Scroll &amp; Âncoras</strong>: verificação dos botões “Saber Mais” e scroll até às
+                    secções corretas.</li>
+                <li>✉️ - <strong>Newsletter</strong>: validação de email + reCAPTCHA antes da submissão.</li>
+                <li>🍇 - <strong>Páginas de Vinho</strong>: abertura da ficha do vinho, PDF técnico e produto na loja.
+                </li>
+                <li>🏡 - <strong>Enoturismo</strong>: links para casa e redirecionamento para o Airbnb (nova aba).</li>
+                <li>🛒 - <strong>Loja e Checkout</strong>: botões <em>Comprar / Comprar Agora / Finalizar Compra</em> e
+                    fluxo até ao pagamento concluído.</li>
+                <li>🌐 - <strong>Idiomas</strong>: troca entre PT e EN com recarregamento de textos e rotas.</li>
+                <li>📘 - <strong>Rodapé</strong>: links para Facebook, Política de Privacidade, Termos e Cookies.</li>
+            </ul>
+        </section>
+
         <section id="acesso" class="card links">
-            <h2>6. Acesso à Demonstração</h2>
+            <h2>7. Acesso à Demonstração</h2>
             <p><strong>Frontend (website + loja):</strong><br>
                 <a href="https://quintadocota-version-2-shop.pages.dev/" target="_blank" rel="noopener">
                     https://quintadocota-version-2-shop.pages.dev/

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quinta do Cota ER Diagram</title>
+</head>
+
+<body style="margin:0;background:#0d0d0d;">
+    <svg xmlns="http://www.w3.org/2000/svg" width="2100" height="1600"
+        style="background:#0d0d0d;font-family:monospace;font-size:11px;fill:white;">
+        <text x="40" y="40" font-size="20" fill="#f1c40f">Quinta do Cota — Diagrama ER Completo da Base de Dados</text>
+
+        <!-- USERS SECTION -->
+        <text x="120" y="80" font-size="18" fill="#b266ff" font-weight="bold">USERS</text>
+        <g transform="translate(40,100)">
+            <rect x="0" y="0" width="300" height="430" fill="#3d0a61" stroke="#b266ff" stroke-width="1.2" />
+            <text x="10" y="20" font-size="14" font-weight="bold">CustomUser</text>
+            <text x="10" y="40">id (PK): AutoField</text>
+            <text x="10" y="55">email: EmailField(unique)</text>
+            <text x="10" y="70">username: CharField(150, unique)</text>
+            <text x="10" y="85">first_name, last_name: CharField(30)</text>
+            <text x="10" y="100">address, address_2: CharField(255)</text>
+            <text x="10" y="115">city: CharField(255)</text>
+            <text x="10" y="130">postal_code: CharField(20)</text>
+            <text x="10" y="145">house_number: CharField(20)</text>
+            <text x="10" y="160">country_code, region_code: CharField(10)</text>
+            <text x="10" y="175">country_name, region_name: CharField(100)</text>
+            <text x="10" y="190">phone: CharField(20)</text>
+            <text x="10" y="205">lang: CharField(5, choices)</text>
+            <text x="10" y="220">is_active, is_staff: BooleanField</text>
+            <text x="10" y="235">date_joined: DateTimeField(auto_now_add)</text>
+        </g>
+
+        <!-- SHOP SECTION -->
+        <text x="900" y="80" font-size="18" fill="#ff6666" font-weight="bold">SHOP</text>
+        <g transform="translate(800,100)">
+            <rect x="0" y="0" width="350" height="420" fill="#600000" stroke="#ff6666" stroke-width="1.2" />
+            <text x="10" y="20" font-size="14" font-weight="bold">Wine</text>
+            <text x="10" y="40">id (PK): AutoField</text>
+            <text x="10" y="55">product_title(_en): CharField(200)</text>
+            <text x="10" y="70">year: PositiveIntegerField</text>
+            <text x="10" y="85">grapes: CharField(250)</text>
+            <text x="10" y="100">wine_doc(_en): CharField(250)</text>
+            <text x="10" y="115">image_url: ImageField</text>
+            <text x="10" y="130">product_pdf: FileField</text>
+            <text x="10" y="145">product_url: SlugField(unique)</text>
+            <text x="10" y="160">main_desc(_en): TextField</text>
+            <text x="10" y="175">wine_type(_en): CharField(20, choices)</text>
+            <text x="10" y="190">soils_type(_en): CharField(250)</text>
+            <text x="10" y="205">alcohol: CharField(4, choices)</text>
+            <text x="10" y="220">capacity: CharField(4, choices)</text>
+            <text x="10" y="235">show_catalog, show_shop: BooleanField</text>
+            <text x="10" y="250">price, new_price: DecimalField(8,2)</text>
+            <text x="10" y="265">bottles_quantity: PositiveIntegerField</text>
+            <text x="10" y="295">sku: CharField(50, unique)</text>
+        </g>
+        <g transform="translate(800,560)">
+            <rect x="0" y="0" width="330" height="70" fill="#600000" stroke="#ff6666" stroke-width="1.2" />
+            <text x="10" y="20" font-size="14" font-weight="bold">ShopSettings</text>
+            <text x="10" y="40">id (PK): AutoField</text>
+            <text x="10" y="55">shop_enabled: BooleanField</text>
+        </g>
+
+        <!-- SHIPPING SECTION -->
+        <text x="1300" y="80" font-size="18" fill="#00cccc" font-weight="bold">SHIPPING</text>
+        <g transform="translate(1220,100)">
+            <rect x="0" y="0" width="320" height="110" fill="#005555" stroke="#00cccc" stroke-width="1.2" />
+            <text x="10" y="20" font-size="14" font-weight="bold">ShippingCountry</text>
+            <text x="10" y="40">id (PK): AutoField</text>
+            <text x="10" y="55">name: CharField(100)</text>
+            <text x="10" y="70">code: CharField(10, unique)</text>
+        </g>
+        <g transform="translate(1220,230)">
+            <rect x="0" y="0" width="320" height="100" fill="#005555" stroke="#00cccc" stroke-width="1.2" />
+            <text x="10" y="20" font-size="14" font-weight="bold">ShippingRegion</text>
+            <text x="10" y="40">id (PK): AutoField</text>
+            <text x="10" y="55">country_id (FK→ShippingCountry)</text>
+            <text x="10" y="70">name, code: CharField(100/10)</text>
+        </g>
+        <g transform="translate(1220,360)">
+            <rect x="0" y="0" width="320" height="120" fill="#005555" stroke="#00cccc" stroke-width="1.2" />
+            <text x="10" y="20" font-size="14" font-weight="bold">ShippingOption</text>
+            <text x="10" y="40">id (PK): AutoField</text>
+            <text x="10" y="55">name: CharField(100)</text>
+            <text x="10" y="70">allow_shipping, allow_free_shipping: BooleanField</text>
+            <text x="10" y="85">free_shipping_from: DecimalField(8,2)</text>
+            <text x="10" y="100">countries: ManyToMany(ShippingCountry)</text>
+            <text x="10" y="115">regions: ManyToMany(ShippingRegion)</text>
+        </g>
+        <g transform="translate(1220,510)">
+            <rect x="0" y="0" width="320" height="90" fill="#005555" stroke="#00cccc" stroke-width="1.2" />
+            <text x="10" y="20" font-size="14" font-weight="bold">ShippingBottleRange</text>
+            <text x="10" y="40">id (PK): AutoField</text>
+            <text x="10" y="55">shipping_option_id (FK→ShippingOption)</text>
+            <text x="10" y="70">min_bottles, max_bottles: PositiveIntegerField</text>
+            <text x="10" y="85">price_per_bottle: DecimalField(6,2)</text>
+        </g>
+        <g transform="translate(1220,630)">
+            <rect x="0" y="0" width="320" height="80" fill="#005555" stroke="#00cccc" stroke-width="1.2" />
+            <text x="10" y="20" font-size="14" font-weight="bold">ShippingDetail</text>
+            <text x="10" y="40">id (PK): AutoField</text>
+            <text x="10" y="55">title_pt/en: CharField(200)</text>
+            <text x="10" y="70">description_pt/en: TextField</text>
+        </g>
+
+        <!-- CHECKOUT SECTION -->
+        <text x="480" y="80" font-size="18" fill="#ffd700" font-weight="bold">CHECKOUT</text>
+        <g transform="translate(400,100)">
+            <rect x="0" y="0" width="360" height="430" fill="#b8860b" stroke="#ffd700" stroke-width="1.2" />
+            <text x="10" y="20" font-size="14" font-weight="bold">Order</text>
+            <text x="10" y="40">id (PK): AutoField</text>
+            <text x="10" y="55">user_id (FK→CustomUser)</text>
+            <text x="10" y="70">order_code: UUIDField(unique)</text>
+            <text x="10" y="85">order_number: CharField(20, unique)</text>
+            <text x="10" y="100">code: CharField(8), code_expires_at: DateTimeField</text>
+            <text x="10" y="115">billing & shipping address fields</text>
+            <text x="10" y="130">total_amount: DecimalField(10,2)</text>
+            <text x="10" y="145">total_without_discount: DecimalField(10,2)</text>
+            <text x="10" y="160">payment_status: CharField(20, choices)</text>
+            <text x="10" y="175">deliver_status: CharField(20, choices)</text>
+            <text x="10" y="190">stripe_payment_intent_id: CharField(255)</text>
+            <text x="10" y="205">shipping_cost: DecimalField(10,2)</text>
+            <text x="10" y="220">shipping_option_name: CharField(255)</text>
+            <text x="10" y="235">created_at: DateTimeField(auto_now_add)</text>
+        </g>
+        <g transform="translate(400,550)">
+            <rect x="0" y="0" width="330" height="150" fill="#b8860b" stroke="#ffd700" stroke-width="1.2" />
+            <text x="10" y="20" font-size="14" font-weight="bold">OrderItem</text>
+            <text x="10" y="40">id (PK): AutoField</text>
+            <text x="10" y="55">order_id (FK→Order)</text>
+            <text x="10" y="70">wine_id (FK→Wine)</text>
+            <text x="10" y="85">product_name: CharField(255)</text>
+            <text x="10" y="100">quantity: PositiveIntegerField</text>
+            <text x="10" y="115">price, new_price: DecimalField(10,2)</text>
+            <text x="10" y="130">deliver_status: CharField(20)</text>
+        </g>
+
+        <!-- NEWSLETTER SECTION -->
+        <text x="1700" y="80" font-size="18" fill="#66aaff" font-weight="bold">NEWSLETTER</text>
+        <g transform="translate(1650,100)">
+            <rect x="0" y="0" width="380" height="100" fill="#002b80" stroke="#66aaff" stroke-width="1.2" />
+            <text x="10" y="20" font-size="14" font-weight="bold">Subscriber</text>
+            <text x="10" y="40">id (PK): AutoField</text>
+            <text x="10" y="55">email: EmailField(unique)</text>
+            <text x="10" y="70">language: CharField(2, choices)</text>
+            <text x="10" y="85">is_active: BooleanField, subscribed_at: DateTimeField</text>
+        </g>
+        <g transform="translate(1650,230)">
+            <rect x="0" y="0" width="380" height="110" fill="#002b80" stroke="#66aaff" stroke-width="1.2" />
+            <text x="10" y="20" font-size="14" font-weight="bold">Newsletter</text>
+            <text x="10" y="40">id (PK): AutoField</text>
+            <text x="10" y="55">title, subject: CharField(255)</text>
+            <text x="10" y="70">body_html: TextField</text>
+            <text x="10" y="85">language: CharField(2)</text>
+            <text x="10" y="100">created_at, updated_at: DateTimeField</text>
+        </g>
+
+        <!-- CONTACT SECTION -->
+        <text x="1700" y="380" font-size="18" fill="#bbbbbb" font-weight="bold">CONTACT</text>
+        <g transform="translate(1650,400)">
+            <rect x="0" y="0" width="380" height="130" fill="#444444" stroke="#bbbbbb" stroke-width="1.2" />
+            <text x="10" y="20" font-size="14" font-weight="bold">ContactFormMessage</text>
+            <text x="10" y="40">id (PK): AutoField</text>
+            <text x="10" y="55">first_name, last_name: CharField(100)</text>
+            <text x="10" y="70">email: EmailField, phone: CharField(50)</text>
+            <text x="10" y="85">subject: CharField(150)</text>
+            <text x="10" y="100">message: TextField</text>
+            <text x="10" y="115">recaptcha_lang: CharField(5), created_at: DateTimeField</text>
+        </g>
+
+        <!-- RELATION ARROWS -->
+        <defs>
+            <marker id="arrow" markerWidth="10" markerHeight="10" refX="6" refY="3" orient="auto">
+                <path d="M0,0 L0,6 L6,3 z" fill="white" />
+            </marker>
+        </defs>
+        <line x1="340" y1="200" x2="400" y2="200" stroke="#ffffff" marker-end="url(#arrow)" />
+        <line x1="1130" y1="250" x2="1220" y2="250" stroke="#ffffff" marker-end="url(#arrow)" />
+        <!-- Newsletter ↔ Subscriber relationship -->
+        <line x1="1780" y1="200" x2="1780" y2="230" stroke="#66aaff" stroke-width="1" marker-end="url(#arrow)" />
+        <text x="1790" y="215" font-size="11" fill="#66aaff">FK → Subscriber</text>
+        <!-- SHIPPING RELATIONSHIPS -->
+
+        <!-- ShippingCountry → ShippingRegion -->
+        <line x1="1380" y1="210" x2="1380" y2="230" stroke="#00cccc" stroke-width="1" marker-end="url(#arrow)" />
+        <text x="1390" y="225" font-size="11" fill="#00cccc">1 → N</text>
+
+        <!-- ShippingCountry → ShippingOption (M2M) -->
+        <line x1="1400" y1="180" x2="1400" y2="380" stroke="#00cccc" stroke-width="1.2" stroke-dasharray="4,2"
+            marker-end="url(#arrow)" />
+        <text x="1410" y="280" font-size="11" fill="#00cccc">M2M</text>
+
+        <!-- ShippingOption → ShippingBottleRange -->
+        <line x1="1380" y1="480" x2="1380" y2="510" stroke="#00cccc" stroke-width="1" marker-end="url(#arrow)" />
+        <text x="1390" y="495" font-size="11" fill="#00cccc">1 → N</text>
+
+        <!-- ShippingOption → ShippingDetail (logical link) -->
+        <line x1="1420" y1="460" x2="1420" y2="630" stroke="#00cccc" stroke-width="1" stroke-dasharray="4,2"
+            marker-end="url(#arrow)" />
+        <text x="1430" y="550" font-size="11" fill="#00cccc">info</text>
+
+        <!-- CHECKOUT → SHOP (module-level relationship) -->
+        <line x1="760" y1="320" x2="800" y2="320" stroke="#ffffff" stroke-width="1.5" marker-end="url(#arrow)" />
+        <text x="770" y="310" font-size="12" fill="#ffffff"</text>
+
+
+
+    </svg>
+</body>
+
+</html>

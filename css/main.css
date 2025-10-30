@@ -178,11 +178,11 @@ footer {
     }
 
     .container {
-        padding: 0 5px !important;
+        padding: 10px 0 !important;
     }
 
     .card {
-        padding: 5px !important;
+        padding: 10px 15px !important;
     }
 
     @media(max-width:600px) {

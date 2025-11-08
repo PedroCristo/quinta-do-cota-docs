@@ -1,5 +1,5 @@
 // --- Quinta do Cota Docs password gate (hashed version) ---
-(async function() {
+(async function () {
   // SHA-256 hash for password "quinta2025"
   const STORED_HASH = "edcff9cd51f1d4bff9a5d1e7148901e7f08a782f24f24fb16124ff7f731f505f";
   const ACCESS_KEY = "quinta_docs_access";
@@ -87,3 +87,25 @@
   overlay.append(box);
   document.body.append(overlay);
 })();
+
+// -----------------------------------------------------------
+// Smooth scroll for internal anchor links
+// -----------------------------------------------------------
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    const targetId = this.getAttribute('href');
+    const targetElement = document.querySelector(targetId);
+
+    // Only run if the target exists (avoid scrolling to "#")
+    if (targetElement) {
+      e.preventDefault();
+      targetElement.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+
+      // Optionally update the URL hash without jumping
+      history.pushState(null, null, targetId);
+    }
+  });
+});
